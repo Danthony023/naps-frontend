@@ -3,7 +3,8 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-const apiUrl = import.meta.env.VITE_APP_NAPS_URL || "/api";
+const apiUrl =
+  import.meta.env.VITE_APP_NAPS_URL || "https://naps-api.onrender.com/api";
 const getAccessToken = () => localStorage.getItem("accessToken");
 const getAuthHeader = () => {
   const token = getAccessToken();
@@ -23,12 +24,12 @@ const UploadResource = async (id, data, setUploadProgress) => {
       headers: {
         Accept: "application/json",
         "Content-Type": "multipart/form-data",
-        
+
         ...getAuthHeader(),
       },
       onUploadProgress: (progressEvent) => {
         const percent = Math.round(
-          (progressEvent.loaded * 100) / progressEvent.total
+          (progressEvent.loaded * 100) / progressEvent.total,
         );
         setUploadProgress(percent);
       },
@@ -67,7 +68,7 @@ const GetResourcesByLevel = async (level) => {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-        
+
         ...getAuthHeader(),
       },
     });

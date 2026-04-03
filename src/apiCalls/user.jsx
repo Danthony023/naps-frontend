@@ -3,14 +3,14 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-const apiUrl = import.meta.env.VITE_APP_NAPS_URL || "/api";
+const apiUrl =
+  import.meta.env.VITE_APP_NAPS_URL || "https://naps-api.onrender.com/api";
 
 const getAccessToken = () => localStorage.getItem("accessToken");
 const getAuthHeader = () => {
   const token = getAccessToken();
   return token ? { Authorization: `Bearer ${token}` } : {};
 };
-
 
 const UsersCreate = async (data) => {
   const MySwal = withReactContent(Swal);
@@ -19,11 +19,11 @@ const UsersCreate = async (data) => {
     data instanceof FormData
       ? data
       : Object.entries(data || {}).reduce((fd, [key, value]) => {
-        if (value !== undefined && value !== null) {
-          fd.append(key, value);
-        }
-        return fd;
-      }, new FormData());
+          if (value !== undefined && value !== null) {
+            fd.append(key, value);
+          }
+          return fd;
+        }, new FormData());
 
   console.log(data);
   try {
@@ -31,7 +31,6 @@ const UsersCreate = async (data) => {
       headers: {
         Accept: "application/json",
         "Content-Type": "multipart/form-data",
-
       },
     });
     console.log(postsData);
@@ -79,7 +78,6 @@ const UsersConfirmEmail = async (email, otp) => {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-
       },
     });
     console.log(postsData);
@@ -126,7 +124,6 @@ const UsersResendOTP = async (email) => {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-
       },
     });
     console.log(postsData);
@@ -173,7 +170,6 @@ const UsersLogin = async (email, password) => {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-
       },
     });
     console.log(postsData);
@@ -221,7 +217,6 @@ const UsersLoginMatric = async (matric_no, password) => {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-
       },
     });
     console.log(postsData);
@@ -267,7 +262,6 @@ const UsersForgotPassword = async (email) => {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-
       },
     });
     console.log(postsData);
@@ -315,7 +309,6 @@ const UsersResetPassword = async (email, otp, new_password) => {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-
       },
     });
     console.log(postsData);

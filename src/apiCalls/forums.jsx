@@ -3,7 +3,8 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-const apiUrl = import.meta.env.VITE_APP_NAPS_URL || "/api";
+const apiUrl =
+  import.meta.env.VITE_APP_NAPS_URL || "https://naps-api.onrender.com/api";
 
 const getAccessToken = () => localStorage.getItem("accessToken");
 const getAuthHeader = () => {
@@ -172,13 +173,17 @@ const JoinForum = async (forumId) => {
   const url = `${apiUrl}/forums/${forumId}/join`;
 
   try {
-    const response = await axios.post(url, {}, {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-        ...getAuthHeader(),
+    const response = await axios.post(
+      url,
+      {},
+      {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json;charset=UTF-8",
+          ...getAuthHeader(),
+        },
       },
-    });
+    );
     if (response.status === 200) {
       MySwal.fire({
         title: "Success",
@@ -349,13 +354,17 @@ const LikeMessage = async (messageId) => {
   const url = `${apiUrl}/forums/messages/${messageId}/like`;
 
   try {
-    const response = await axios.post(url, {}, {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-        ...getAuthHeader(),
+    const response = await axios.post(
+      url,
+      {},
+      {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json;charset=UTF-8",
+          ...getAuthHeader(),
+        },
       },
-    });
+    );
     return response;
   } catch (err) {
     console.log(err);

@@ -12,7 +12,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      "/api": {
+      "https://naps-api.onrender.com/api": {
         target: "https://naps.odamarketplace.com",
         changeOrigin: true,
         secure: true,

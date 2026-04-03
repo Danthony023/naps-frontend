@@ -3,8 +3,8 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-const apiUrl = import.meta.env.VITE_APP_NAPS_URL || "/api";
-
+const apiUrl =
+  import.meta.env.VITE_APP_NAPS_URL || "https://naps-api.onrender.com/api";
 
 const getAccessToken = () => localStorage.getItem("accessToken");
 const getAuthHeader = () => {
