@@ -1,6 +1,6 @@
 // import React from 'react'
 import { LogOut } from "lucide-react";
-import NAPS_LOGO from "../assets/images/NAPS_LOGO.png";
+import NAPS_LOGO from "../assets/images/NAPS_LOGO.jpeg";
 // import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
@@ -12,7 +12,7 @@ const DashboardNav = () => {
   return (
     <div className="flex justify-between h-fit w-[95%] m-3 font-GeneralSans-Medium">
       <div className="flex space-x-1 items-center text-main_grey">
-        <img src={NAPS_LOGO} />
+        <img src={NAPS_LOGO} width={25} height={25} />
         <div className="flex flex-col -space-y-1">
           <span className="text-[12px]">Department of</span>
           <span className="text-[16px]">Psychology</span>
