@@ -1,4 +1,4 @@
-import gridIcon from "../assets/images/ResourceIcons/gridIcon.svg";
+import gridIcon from "../assets/images/ResourceIcons/GridIcon.svg";
 import listIcon from "../assets/images/ResourceIcons/ListIcon.svg";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
