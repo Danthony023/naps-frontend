@@ -87,7 +87,7 @@ The application is built as a **React + Vite** single-page application (SPA) and
 
 ## 🗂 Project Structure
 
-\`\`\`
+```
 naps-frontend/
 ├── public/
 │   └── NAPS_LOGO.png             # App icon / favicon
@@ -124,7 +124,7 @@ naps-frontend/
 ├── tailwind.config.js            # Tailwind CSS configuration
 ├── vercel.json                   # Vercel SPA rewrite rules
 └── package.json
-\`\`\`
+```
 
 ---
 
@@ -140,37 +140,37 @@ Make sure you have the following installed:
 ### Installation
 
 1. **Clone the repository:**
-   \`\`\`bash
+   ```bash
    git clone https://github.com/<your-org>/naps-frontend.git
    cd naps-frontend
-   \`\`\`
+   ```
 
 2. **Install dependencies:**
-   \`\`\`bash
+   ```bash
    npm install
-   \`\`\`
+   ```
 
 3. **Configure environment variables** — see [Environment Variables](#environment-variables) below.
 
 ### Running Locally
 
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 The app will start at **[http://localhost:5173](http://localhost:5173)** by default.
 
 ### Building for Production
 
-\`\`\`bash
+```bash
 npm run build
-\`\`\`
+```
 
 The optimised output is placed in the `dist/` directory. To preview it locally:
 
-\`\`\`bash
+```bash
 npm run preview
-\`\`\`
+```
 
 ---
 
@@ -178,13 +178,13 @@ npm run preview
 
 Create a `.env` file in the project root and populate it as follows:
 
-\`\`\`env
+```env
 # Base URL of the NAPS backend API
 VITE_API_BASE_URL=https://your-api-domain.com/api
 
 # API Key for authenticating requests to the backend
 VITE_API_KEY=your-api-key-here
-\`\`\`
+```
 
 > **Important:** All Vite environment variables must be prefixed with `VITE_` to be accessible inside the browser bundle. Never commit your `.env` file to version control — add it to `.gitignore`.
 
@@ -220,15 +220,15 @@ The frontend communicates with a RESTful backend API. Most requests require the 
 
 Run the full test suite:
 
-\`\`\`bash
+```bash
 npm test
-\`\`\`
+```
 
 Run tests with a coverage report:
 
-\`\`\`bash
+```bash
 npm run test:coverage
-\`\`\`
+```
 
 Test files live in `src/test/`. API calls are mocked using **MSW (Mock Service Worker)**, so tests run without a live backend connection.
 
@@ -242,9 +242,9 @@ This project is configured for **[Vercel](https://vercel.com/)** deployment. The
 
 1. Push your changes to the main branch (if using Vercel's Git integration), **or**
 2. Use the Vercel CLI:
-   \`\`\`bash
+   ```bash
    npx vercel --prod
-   \`\`\`
+   ```
 
 Set `VITE_API_BASE_URL` and `VITE_API_KEY` as environment variables in your Vercel project settings before deploying.
 
